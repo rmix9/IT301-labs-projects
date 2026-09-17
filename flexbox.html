@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .flex-parent {
+            border: 1px solid; 
+            display: flex;
+            height: 100vh;
+            align-items: center;
+        }
+        div img {
+            background-color: antiquewhite;
+            justify-content: center;
+            margin: 10px;
+            align-items: center;
+        }
+        .child1 {
+            min-height: 150px;
+        }
+        .child2 {
+            min-height: 200px;
+        }
+        .child3 {
+            min-height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-parent">
+        <img class="child1" src="https://picsum.photos/100/100?random=1" alt="Image 1">
+        <img class="child2" src="https://picsum.photos/100/100?random=2" alt="Image 2">
+        <img class="child3" src="https://picsum.photos/100/100?random=3" alt="Image 3">
+    </div>
+</body>
+</html>
