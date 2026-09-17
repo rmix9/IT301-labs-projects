@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+
+h1 {
+    font-family: 'Cedarville Cursive', cursive;
+    color: #2a52be;
+}
+
+h2 {
+    font-family: 'Cedarville Cursive', cursive;
+    color: #228b22;
+}
+
+h3 {
+    font-family: 'Cedarville Cursive', cursive;
+    color: #dc143c;
+}
+
+p {
+    font-family: 'Cedarville Cursive', cursive;
+    color: #9400d3;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+section, aside, article {
+    border: 2px solid #2a52be;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 5px 5px 5px
+}
+
+body {
+    background-color: #f0f0f0;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #2a52be;
+    border-radius: 10px;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 40px;
+}
+
+footer, img {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
