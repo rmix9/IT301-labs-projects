@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masonry</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            height: 100vh;
+            margin: 0;
+        }
+        .left-panel {
+            width: 150px;
+            display: flex;
+            background-color: orange;
+            flex-direction: column;
+        }
+        .right-panel {
+            display: flex;
+            background-color: red;
+            flex-grow: 1;
+            overflow-y: auto;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+        .right-panel img {
+            flex-grow: 1;
+            height: 100px;
+            object-fit: cover;
+        }
+        .left-panel div {
+            font-size: 25px;
+            text-align: center;
+            padding: 5px;
+        }
+        .left-panel div:last-child {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="left-panel">
+        <div id="&#x1F4F7;">📷</div>
+        <div id="&#x1F5C4;&#xfe0f;">📁</div>
+        <div id="&#x2764;&#xfe0f;">❤️</div>
+        <div id="&#x1F5D1;&#xfe0f;">🗑️</div>
+    </div>
+    <div class="right-panel">
+        <img src="https://picsum.photos/100/100?random=1" alt="Image 1">
+        <img src="https://picsum.photos/150/100?random=2" alt="Image 2">
+        <img src="https://picsum.photos/206/100?random=3" alt="Image 3">
+        <img src="https://picsum.photos/173/100?random=4" alt="Image 4">
+        <img src="https://picsum.photos/105/100?random=5" alt="Image 5">
+        <img src="https://picsum.photos/163/100?random=6" alt="Image 6">
+        <img src="https://picsum.photos/218/100?random=7" alt="Image 7">
+        <img src="https://picsum.photos/202/100?random=8" alt="Image 8">
+        <img src="https://picsum.photos/199/100?random=9" alt="Image 9">
+        <img src="https://picsum.photos/209/100?random=10" alt="Image 10">
+        <img src="https://picsum.photos/125/100?random=11" alt="Image 11">
+        <img src="https://picsum.photos/133/100?random=12" alt="Image 12">
+        <img src="https://picsum.photos/188/100?random=13" alt="Image 13">
+        <img src="https://picsum.photos/263/100?random=14" alt="Image 14">
+        <img src="https://picsum.photos/294/100?random=15" alt="Image 15">
+        <img src="https://picsum.photos/101/100?random=16" alt="Image 16">
+        <img src="https://picsum.photos/300/100?random=17" alt="Image 17">
+        <img src="https://picsum.photos/207/100?random=18" alt="Image 18">
+        <img src="https://picsum.photos/155/100?random=19" alt="Image 19">
+        <img src="https://picsum.photos/182/100?random=20" alt="Image 20">
+    </div>
+</body>
+</html>
