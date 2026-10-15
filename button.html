@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button</title>
+    <style>
+        button {
+            font-size: 15px;
+            padding: 10px 20px;
+            background-color: Blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #mouseArea {
+            width: 75vh;
+            height: 200px;
+            margin-top: 30px;
+            background-color: Purple;
+        }
+    </style>
+</head>
+<body>
+    <button id="myButton">Click me!😊</button>
+    <div id="mouseArea"></div>
+
+    <script>
+        const myButton = document.getElementById('myButton');
+        const mouseArea = document.getElementById('mouseArea');
+
+        myButton.addEventListener('mouseover', mouseOver);
+        myButton.addEventListener('click', mouseClick);
+        myButton.addEventListener('mouseleave', mouseLeave);
+        myButton.addEventListener('dblclick', mouseDoubleClick);
+        myButton.addEventListener('mousemove', mouseMove);
+
+        function mouseOver(event) {
+            event.target.textContent = 'Do Not Click!😡';
+            event.target.style.backgroundColor = 'Yellow';
+        }
+
+        function mouseClick(event) {
+            event.target.textContent = 'Ouch!🤕';
+            event.target.style.backgroundColor = 'Red';
+        }
+
+        function mouseLeave(event) {
+            event.target.textContent = 'Phew!😌';
+            event.target.style.backgroundColor = 'LightGreen';
+        }
+
+        function mouseDoubleClick(event) {
+            event.target.textContent = 'Double Trouble!🤩';
+            event.target.style.backgroundColor = 'Pink';
+        }
+
+        function mouseMove(event) {
+            event.target.textContent = 'I see you!👀';
+            event.target.style.backgroundColor = 'LightBlue';
+        }
+
+        mouseArea.addEventListener('mousemove', mouseMove);
+    </script>
+</body>
+</html>
