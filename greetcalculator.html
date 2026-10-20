@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting & Calculator</title>
+</head>
+<body>
+    <h2>Greeting</h2>
+    <p>Enter your name:</p>
+    <input type="text" id="name">
+    <button id="greet">Greet</button>
+    <h2>Calculator</h2>
+    <p>Enter two numbers:</p>
+    <input type="number" id="num1">
+    <input type="number" id="num2">
+    <p>Choose an operation:</p>
+    <input type="radio" name="operation" value="add">Add<br>
+    <input type="radio" name="operation" value="subtract">Subtract<br>
+    <input type="radio" name="operation" value="multiply">Multiply<br>
+    <input type="radio" name="operation" value="divide">Divide<br>
+    <button id="calculate">Calculate</button>
+    <button id="clear">Clear</button>
+    <p id="result"></p>
+    <script>
+        const greetButton = document.getElementById('greet');
+        function greet() {
+            const name = document.getElementById('name').value;
+            document.getElementById('greet').textContent = `Hello, ${name}!`;
+        }
+        greetButton.addEventListener('click', greet);
+
+        const calculateButton = document.getElementById('calculate');
+        function calculate() {
+            const num1 = Number(document.getElementById('num1').value);
+            const num2 = Number(document.getElementById('num2').value);
+            const operation = document.querySelector('input[name="operation"]:checked').value;
+            let result;
+            if (operation === 'add') {
+                result = num1 + num2;
+            } else if (operation === 'subtract') {
+                result = num1 - num2;
+            } else if (operation === 'multiply') {
+                result = num1 * num2;
+            } else if (operation === 'divide') {
+                if (num2 === 0) {
+                    result = 'Error: Division by zero';
+                } else {
+                    result = num1 / num2;
+                }
+            }
+            document.getElementById('result').textContent = `Result: ${result}`;
+        }
+        calculateButton.addEventListener('click', calculate);
+
+        const clearButton = document.getElementById('clear');
+        function clear() {
+            document.getElementById('name').value = '';
+            document.getElementById('num1').value = '';
+            document.getElementById('num2').value = '';
+            document.querySelectorAll('input[name="operation"]').forEach(input => input.checked = false);
+            document.getElementById('result').textContent = '';
+        }
+        clearButton.addEventListener('click', clear);
+    </script>
+</body>
+</html>
