@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        .valid {
+            color: green;
+        }
+        .invalid {
+            color: red;
+        }
+        #PwdRules {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email">
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter your password">
+
+        <div id="PwdRules">
+            <p>Password must contain:</p>
+            <ul>
+                <li id="length">At least 6 characters</li>
+                <li id="uppercase">At least one uppercase letter</li>
+                <li id="special">At least one special character (!@#$%^&*)</li>
+            </ul>
+        </div>
+        <button type="submit">Register</button>
+    </form>
+    <p id="result"></p>
+    <script>
+        const password = document.getElementById('password');
+        const PwdRules = document.getElementById('PwdRules');
+        const length = document.getElementById('length');
+        const uppercase = document.getElementById('uppercase');
+        const special = document.getElementById('special');
+
+        document.querySelector('form').addEventListener('submit', (event)=>{
+            event.preventDefault();
+            window.location.href = 'success.html';
+        })
+
+        password.addEventListener('input', ()=>{
+            const passwordvalue = password.value;
+            length.classList.toggle('valid', passwordvalue.length >= 6);
+            uppercase.classList.toggle('valid', /[A-Z]/.test(passwordvalue));
+            special.classList.toggle('valid', /[!@#$%^&*]/.test(passwordvalue));
+            length.classList.toggle('invalid', passwordvalue.length < 6);
+            uppercase.classList.toggle('invalid', !/[A-Z]/.test(passwordvalue));
+            special.classList.toggle('invalid', !/[!@#$%^&*]/.test(passwordvalue));
+        })
+    </script>
+</body>
+</html>
